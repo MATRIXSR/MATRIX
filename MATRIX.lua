@@ -3792,7 +3792,7 @@ t = "⌔∮الملف » "..file.."\n⌔∮تم تعطيل ملف \n"
 else
 t = "⌔∮بالتاكيد تم تعطيل ملف → "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/SRC-MATRIXSR/File_Matrix/main/File_Matrix/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/MATRIXSR/File_Matrix/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -3812,7 +3812,7 @@ t = "⌔∮بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = "⌔∮الملف » "..file.."\n⌔∮تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/MATRIXSR/File_Matrix/main/File_Matrix/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/MATRIXSR/File_Matrix/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
@@ -12338,7 +12338,7 @@ end
 --- callback added
 if Text == '/add' then
 if not Constructor(data) then
-local notText = '🚫 عذرا الاوامر هذه لا تخصك'
+local notText = '?? عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
