@@ -2566,6 +2566,33 @@ end
 send(msg.chat_id_, msg.id_,'⌔∮تم ازالة جميع الاوامر المضافه')  
 end
 end
+if text == "ترتيب الاوامر" and Constructor(msg) then
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"ا")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"م")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"اد")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"مد")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"من")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"اس")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تعط")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تفع")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تك","تنزيل الكل")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تك")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":رد","اضف رد")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"رد")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":حذ","حذف رد")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"حذ")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":ت","تثبيت")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"ت")
+ send(msg.chat_id_, msg.id_,"*⌔∮تم ترتيب الاوامر بالشكل التالي*\n*⌔∮ايدي - ا .*\n*⌔∮مميز - م .\n⌔∮ادمن - اد .*\n*⌔∮مدير - مد . \n⌔∮منشى - من .*\n*⌔∮المنشئ الاساسي - اس .*\n*⌔∮تعطيل الايدي بالصوره - تعط .*\n*⌔∮تفعيل الايدي بالصوره - تفع .*\n*⌔∮تنزيل الكل - تك .*\n*⌔∮اضف رد - رد .*\n*⌔∮حذف رد - حذ .*\n*⌔∮تثبيت - ت .*")
+ end
 if text == 'اضف امر' and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -11133,7 +11160,7 @@ end
 ---------------------- الاوامر الجديدة
 if text == 'الاوامر' then
 if not Mod(msg) then
-send(msg.chat_id_, msg.id_,' *⌯︙هاذا الامر خاص بالادمنيه*\n*⌯︙ارسل {م10} لعرض اوامر الاعضاء*')
+send(msg.chat_id_, msg.id_,' *⌔∮هاذا الامر خاص بالادمنيه*\n*⌔∮ارسل {م10} لعرض اوامر الاعضاء*')
 return false
 end
 if AddChannel(msg.sender_user_id_) == false then
@@ -11141,7 +11168,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'  *⌯︙عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌯︙اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'  *⌔∮عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌔∮اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -11179,7 +11206,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'  *⌯︙عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌯︙اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'  *⌔∮عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌔∮اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -11236,7 +11263,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'  *⌯︙عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌯︙اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'  *⌔∮عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌔∮اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -11295,7 +11322,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'  *⌯︙عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌯︙اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'  *⌔∮عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌔∮اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -11336,7 +11363,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'  *⌯︙عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌯︙اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'  *⌔∮عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌔∮اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -11386,7 +11413,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'  *⌯︙عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌯︙اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'  *⌔∮عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌔∮اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -11441,7 +11468,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'  *⌯︙عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌯︙اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'  *⌔∮عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌔∮اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -11515,7 +11542,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'  *⌯︙عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌯︙اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'  *⌔∮عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌔∮اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -11578,7 +11605,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'  *⌯︙عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌯︙اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'  *⌔∮عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌔∮اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -11611,7 +11638,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'  *⌯︙عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌯︙اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'  *⌔∮عذࢪا عليڪ الاشتࢪاڪ في قناه البوت* \n*⌔∮اشتࢪڪ هنا عمࢪي* ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
